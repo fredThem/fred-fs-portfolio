@@ -1,41 +1,46 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
-import { AppBar, Box, Button, Chip, Divider, IconButton, Link, Toolbar } from '@material-ui/core';
-import MenuIcon from '../icons/Menu';
+import { AppBar, Box, Button, Chip, Divider, Link, Toolbar } from '@material-ui/core';
+// import MenuIcon from '../icons/Menu';
 import Logo from './Logo';
 
-const MainNavbar = (props) => {
-  const { onSidebarMobileOpen } = props;
+const MainNavbar = (/* props */) =>
+// const { onSidebarMobileOpen } = props;
 
-  return (
+  // eslint-disable-next-line implicit-arrow-linebreak
+  (
     <AppBar
       elevation={0}
       sx={{
         backgroundColor: 'background.paper',
-        color: 'text.secondary'
+        color: 'text.secondary',
       }}
     >
       <Toolbar sx={{ minHeight: 64 }}>
-        <IconButton
+        {/* <IconButton
           color="inherit"
           onClick={onSidebarMobileOpen}
           sx={{
             display: {
-              md: 'none'
-            }
+              md: 'none',
+            },
           }}
         >
           <MenuIcon fontSize="small" />
-        </IconButton>
-        <RouterLink to="/">
+        </IconButton> */}
+        <RouterLink
+          to="/"
+          style={{
+            display: 'flex' }}
+        >
           <Logo
             sx={{
               display: {
                 md: 'inline',
-                xs: 'none'
+                // xs: 'none',
               },
               height: 40,
-              width: 40
+              width: 'auto',
             }}
           />
         </RouterLink>
@@ -45,8 +50,8 @@ const MainNavbar = (props) => {
             alignItems: 'center',
             display: {
               md: 'flex',
-              xs: 'none'
-            }
+              xs: 'none',
+            },
           }}
         >
           <Link
@@ -65,7 +70,7 @@ const MainNavbar = (props) => {
             sx={{
               maxHeight: 20,
               ml: 1,
-              mr: 2
+              mr: 2,
             }}
           />
           <Link
@@ -81,7 +86,7 @@ const MainNavbar = (props) => {
             orientation="vertical"
             sx={{
               height: 32,
-              mx: 2
+              mx: 2,
             }}
           />
           <Button
@@ -99,10 +104,8 @@ const MainNavbar = (props) => {
       <Divider />
     </AppBar>
   );
-};
-
-MainNavbar.propTypes = {
-  onSidebarMobileOpen: PropTypes.func
-};
+// MainNavbar.propTypes = {
+//   onSidebarMobileOpen: PropTypes.func
+// };
 
 export default MainNavbar;
