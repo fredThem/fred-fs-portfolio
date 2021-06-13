@@ -1,6 +1,8 @@
-// import PropTypes from 'prop-types';
+import { AppBar, Box, /* Button, */ /* Chip, */ Divider, Link, Toolbar } from '@material-ui/core';
+
 import { Link as RouterLink } from 'react-router-dom';
-import { AppBar, Box, Button, /* Chip, */ Divider, Link, Toolbar } from '@material-ui/core';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import MenuIcon from '../icons/Menu';
 import Logo from './Logo';
 
@@ -39,34 +41,43 @@ const MainNavbar = (/* props */) => (
               md: 'inline',
               // xs: 'none',
             },
+            mt: '3px',
             height: 40,
             width: 'auto',
           }}
         />
       </RouterLink>
-      <Box sx={{ flexGrow: 1 }} />
+      <Box sx={{ flexGrow: 1, }} />
       <Box
         sx={{
           alignItems: 'center',
-          display: {
-            md: 'flex',
-            // xs: 'none',
-          },
+          display: 'flex'
         }}
       >
         <Link
           color="textSecondary"
-          component={RouterLink}
-          to="https://github.com/fredThem/CV/raw/main/CV_FredericDesmarais_FullStackDev_ENG.pdf"
-          underline="none"
           variant="body1"
+          underline="none"
+          target="_blank"
+          component="a"
+          href="https://github.com/fredThem/CV/raw/main/CV_FredericDesmarais_FullStackDev_ENG.pdf"
+          download
+          sx={{
+            // maxHeight: 20,
+            height: '100%',
+            // ml: 1,
+            mr: 2,
+            lineHeight: '1 rem'
+          }}
         >
           <Box
             component="span"
             // display="inline"
-            display={{ xs: 'none', sm: 'none' }}
+            display={{ xs: 'none', sm: 'none', md: 'inline' }}
           >
             Download my
+            {' '}
+
           </Box>
           {' '}
           CV
@@ -81,11 +92,38 @@ const MainNavbar = (/* props */) => (
             mr: 2,
           }}
         /> */}
-        <Divider
+        {/* <Divider
           orientation="vertical"
           sx={{
             height: 32,
             mx: 2,
+          }}
+        /> */}
+        <Link
+          color="textSecondary"
+          // component={RouterLink}
+          // to="https://github.com/fredThem"
+          underline="none"
+          target="_blank"
+          component="a"
+          href="https://github.com/fredThem"
+          // size="small"
+          variant="body1"
+          sx={{
+            alignItems: 'center',
+            display: 'flex'
+          }}
+        >
+          <GitHubIcon
+            color="primary"
+            fontSize="large"
+          />
+        </Link>
+        <Divider
+          orientation="vertical"
+          sx={{
+            height: 32,
+            mx: 1,
           }}
         />
         <Link
@@ -94,17 +132,17 @@ const MainNavbar = (/* props */) => (
           to="/docs"
           underline="none"
           variant="body1"
-        >
-          Documentation
-        </Link>
-        <Divider
-          orientation="vertical"
           sx={{
-            height: 32,
-            mx: 2,
+            alignItems: 'center',
+            display: 'flex'
           }}
-        />
-        <Button
+        >
+          <LinkedInIcon
+            color="primary"
+            fontSize="large"
+          />
+        </Link>
+        {/* <Button
           color="primary"
           component="a"
           href="https://material-ui.com/store/items/devias-kit-pro"
@@ -113,7 +151,7 @@ const MainNavbar = (/* props */) => (
           variant="contained"
         >
           Get the kit
-        </Button>
+        </Button> */}
       </Box>
     </Toolbar>
     <Divider />
