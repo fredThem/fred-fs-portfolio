@@ -1,0 +1,100 @@
+
+.parallax-banner-layer-1 {
+  background-size: 100% !important;
+  /* position: absolute; */
+  background-position: 0px 70% !important;
+  inset: 0% 0px !important;
+  background-origin: content-box, padding-box !important;
+
+}
+
+.parallax-banner-layer-2 {
+  background-repeat: no-repeat;
+  background-size: 100% auto !important;
+  background-position: bottom !important;
+inset: inherit !important;
+
+}
+
+@media (max-width: 767.98px){
+  .parallax-banner-layer-1{
+    inset: 0% -90% !important;
+    /* background-size: cover; */
+    /* background-position: center 60% !important; */
+    /* background-repeat: no-repeat; */
+  }
+}
+
+.parallax-banner-layer-0 {
+  /* width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative; */
+  animation-name: example;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {background-position:0% 50%;
+  opacity: 0;}
+  3% {opacity: 1;}
+  /* 25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;} */
+  95% {opacity: 1;}
+
+  100% {background-position:100% 50%;
+  opacity: 0;}
+}
+
+.parallaxChildren {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bannerBg {
+  background: #fff;
+}
+
+.customChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.red {
+  background-color: rgba(#f74c36, 0.8);
+}
+
+.green {
+  background-color: rgba(#35f783, 0.8);
+}
+
+.blue {
+  background-color: rgba(#42a7f4, 0.8);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

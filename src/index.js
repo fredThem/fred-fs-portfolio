@@ -14,6 +14,7 @@ import App from './App';
 import { AuthProvider } from './contexts/JWTContext';
 import { SettingsProvider } from './contexts/SettingsContext';
 import store from './store';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 ReactDOM.render(
   <StrictMode>
@@ -24,7 +25,11 @@ ReactDOM.render(
             <SettingsProvider>
               <BrowserRouter>
                 <AuthProvider>
-                  <App />
+                  <ParallaxProvider>
+
+                    <App />
+
+                  </ParallaxProvider>
                 </AuthProvider>
               </BrowserRouter>
             </SettingsProvider>

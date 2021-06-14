@@ -97,7 +97,7 @@ const Footer = (props) => (
             sx={{ mt: 1 }}
             variant="caption"
           >
-            © 2021 Devias.
+            © 2021 Frédéric Desmarais.
           </Typography>
         </Grid>
         {sections.map((section, index) => (

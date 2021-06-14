@@ -1,194 +1,163 @@
-import { useState, useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { Box, Button, Container, Skeleton, Typography } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
-import CheckCircleIcon from '../../icons/CheckCircle';
+// import { useEffect } from 'react';
+// import { Link as RouterLink } from 'react-router-dom';
+// import { Container } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-const HomeHero = (props) => {
-  const theme = useTheme();
-  const [isLoading, setIsLoading] = useState(true);
-  const [image, setImage] = useState('');
+import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
+import ParallaxBannerStyles from './ParallaxBanner.module.css';
+import './parallaxHero.css';
+// import React from "react";
+// import { makeStyles } from "@material-ui/core/styles";
+// import Paper from "@material-ui/core/Paper";
+// import Grid from "@material-ui/core/Grid";
+import { Typography, Grid, Container } from '@material-ui/core';
+import '@fontsource/fira-code'; // Defaults to weight 400.
+// import { Typography } from '@material-ui/core/Typography';
+// import { shadows } from '@material-ui/system';
 
-  useEffect(() => {
-    (async () => {
-      const response = await fetch(`/static/home/hero_${theme.palette.mode}.png`);
-      const blob = await response.blob();
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    marginTop: '-20%',
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  typography: {
+    // In Chinese and Japanese the characters are usually larger,
+    // so a smaller fontsize may be appropriate.
+    fontFamily: 'Fira Code',
+    fontWeight: '700',
+    color: 'white',
+    textShadow: '1px 1px 1px rgba(0,0,180,0.8), 1px 0px 3px rgba(0,0,100,0.3)',
+    // marginBottom: "10px",
+  },
+}));
 
-      setImage(URL.createObjectURL(blob));
-      setIsLoading(false);
-    })();
-  }, [theme.palette.mode]);
+const HomeHero = (/* props */) => {
+  // const [spacing, setSpacing] = React.useState(2);
+  // const classes = useStyles();
+  const classes = useStyles();
 
+  const layers = [
+    {
+      image:
+      'https://res.cloudinary.com/hjtkps4jr/image/upload/v1623299221/hero/clouds_ba2bum.svg',
+      amount: 0,
+    },
+    {
+      image:
+      'https://res.cloudinary.com/hjtkps4jr/image/upload/v1623410463/hero/mountain-background_crop_syugir.png',
+      amount: 0.2,
+    },
+    {
+      image:
+      'https://res.cloudinary.com/hjtkps4jr/image/upload/v1623367369/hero/mountain-foregroundNme_v2_pgilmp.png',
+      amount: 0,
+    },
+  ];
   return (
-    <Box
-      sx={{
-        backgroundColor: 'background.paper',
-        pt: 6
-      }}
-      {...props}
-    >
-      <Container
-        maxWidth="md"
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          px: {
-            md: '130px !important'
-          }
-        }}
-      >
-        <Typography
-          color="primary"
-          variant="overline"
-        >
-          Introducing
-        </Typography>
-        <Typography
-          align="center"
-          color="textPrimary"
-          variant="h3"
-        >
-          Material Kit Pro v4
-        </Typography>
-        <Typography
-          align="center"
-          color="textSecondary"
-          variant="body1"
-          sx={{ py: 3 }}
-        >
-          A professional kit that comes with ready-to-use Material-UI©
-          components
-          developed with one common goal in mind, help
-          you build faster &amp; beautiful applications.
-        </Typography>
-        <Button
-          color="primary"
-          component={RouterLink}
-          size="large"
-          to="/browse"
-          variant="contained"
-        >
-          Browse Components
-        </Button>
-        <Box
-          sx={{
-            alignItems: {
-              sm: 'center',
-              xs: 'flex-start'
-            },
-            display: 'flex',
-            flexDirection: {
-              sm: 'row',
-              xs: 'column'
-            },
-            py: 3,
-            '& > div': {
-              p: {
-                sm: '0 10.5px',
-                xs: '10.5px 0'
-              }
-            }
-          }}
-        >
-          <Typography
-            color="textSecondary"
-            variant="caption"
-          >
-            Available For:
-          </Typography>
-          {['JavaScript', 'TypeScript', 'Figma', 'Sketch'].map((item) => (
-            <Box
-              key={item}
-              sx={{
-                alignItems: 'center',
-                display: 'flex'
-              }}
+    <>
+      <ParallaxProvider>
+        <div className="vertical">
+          <div className={ParallaxBannerStyles.bannerContainer}>
+            <ParallaxBanner
+              className={ParallaxBannerStyles.bannerBg}
+              layers={layers}
+              style={{ height: '80vh', maxHeight: '720px' }}
             >
-              <CheckCircleIcon
-                sx={{
-                  color: 'success.light',
-                  mr: '10.5px'
-                }}
-              />
-              <Typography
-                color="textPrimary"
-                variant="subtitle2"
-              >
-                {item}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
-      </Container>
-      <Container
-        maxWidth="lg"
-        sx={{
-          width: '100%',
-          px: {
-            md: 15
-          }
-        }}
-      >
-        <Box
-          sx={{
-            position: 'relative',
-            pt: !isLoading && '52.13%'
-          }}
-        >
-          {isLoading
-            ? (
-              <Skeleton
-                sx={{
-                  borderRadius: 1,
-                  width: '100%',
-                  pt: '52.13%'
-                }}
-                variant="rectangular"
-              />
-            )
-            : (
-              <img
-                alt="Hero"
-                src={image}
-                style={{
-                  maxWidth: '100%',
-                  zIndex: 20,
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  top: 0
-                }}
-              />
-            )}
-          <img
-            alt="Shapes 1"
-            src="/static/home/shapes_1.svg"
-            style={{
-              left: '3%',
-              position: 'absolute',
-              top: '-7.5%',
-              width: '20%',
-              maxWidth: '243.32px',
-              zIndex: 0
-            }}
-          />
-          <img
-            alt="Shapes 2"
-            src="/static/home/shapes_2.svg"
-            style={{
-              bottom: 0,
-              position: 'absolute',
-              right: '-8%',
-              width: '20%',
-              maxWidth: '195.32px',
-              zIndex: 30
-            }}
-          />
-        </Box>
-      </Container>
-    </Box>
+              <div className={ParallaxBannerStyles.parallaxChildren}>
+                <Container maxWidth="md">
+                  <div className={classes.root}>
+                    <Grid
+                      container
+                      spacing={3}
+                    >
+                      {/* <Grid item xs={12}>
+          <Paper className={classes.paper}>xs=12</Paper>
+        </Grid> */}
+
+                      <Grid
+                        item
+                        xs={12}
+                        sm={8}
+                        md={8}
+                      >
+                        <Typography
+            // variant="h6"
+            // component="h2"
+                          className={classes.typography}
+                        >
+                          #
+                          {' '}
+                          Freshly certified 🎉
+                          {' '}
+                        </Typography>
+                        <Typography
+                          variant="h5"
+            // component="h2"
+                          className={classes.typography}
+                        >
+                          {'`<FullStackWebDeveloper/>`'}
+                        </Typography>
+                        <Typography
+                          className={classes.typography}
+                          style={{ margin: '16px' }}
+                        >
+                          {'>'}
+                          {' '}
+                          With a technical background in web & graphic design.
+                          {' '}
+                        </Typography>
+                        <Typography
+            // variant="h6"
+            // component="h2"
+                          className={classes.typography}
+                        >
+                          {`I_love: [ 
+    Coding with a clear and practical style 👾,
+    Solving problems🚀,
+    Being outdoors ⛰‍,
+    Hard rock 👹]`}
+                        </Typography>
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        md={4}
+                      >
+                        <Typography
+                          variant="h6"
+            // component="h2"
+                          className={classes.typography}
+                        >
+                          Hello world, I’m Fred
+                          {'\u2009'}
+                          🖐
+                        </Typography>
+                        <Typography className={classes.typography}>
+                          {'>'}
+                          {' '}
+                          BASED IN MTL
+                        </Typography>
+                        <Typography className={classes.typography}>
+                          {'>'}
+                          {' '}
+                          EN/FR BILINGUAL
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </div>
+                </Container>
+              </div>
+            </ParallaxBanner>
+          </div>
+        </div>
+      </ParallaxProvider>
+    </>
   );
 };
 

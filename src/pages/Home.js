@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Material Kit Pro</title>
+        <title>Fred&apos;s Full-Stack Porfolio</title>
       </Helmet>
       <div>
         <HomeHero />
