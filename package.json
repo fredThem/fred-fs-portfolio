@@ -61,6 +61,7 @@
     "history": "^5.0.0",
     "i18next": "^19.8.7",
     "lodash": "^4.17.20",
+    "material-ui-image": "^3.3.2",
     "nprogress": "^0.2.0",
     "numeral": "^2.0.6",
     "prop-types": "^15.7.2",

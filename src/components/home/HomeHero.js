@@ -1,3 +1,4 @@
+// import Image from 'material-ui-image';
 // import { useEffect } from 'react';
 // import { Link as RouterLink } from 'react-router-dom';
 // import { Container } from '@material-ui/core';
@@ -18,7 +19,7 @@ import '@fontsource/fira-code'; // Defaults to weight 400.
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: '-20%',
+    marginTop: '-25%',
   },
   paper: {
     padding: theme.spacing(2),
@@ -50,25 +51,28 @@ const HomeHero = (/* props */) => {
     {
       image:
       'https://res.cloudinary.com/hjtkps4jr/image/upload/v1623410463/hero/mountain-background_crop_syugir.png',
-      amount: 0.2,
+      amount: 0.25,
     },
-    {
-      image:
-      'https://res.cloudinary.com/hjtkps4jr/image/upload/v1623367369/hero/mountain-foregroundNme_v2_pgilmp.png',
-      amount: 0,
-    },
+    // {
+    //   image:
+    //   'https://res.cloudinary.com/hjtkps4jr/image/upload/v1623367369/hero/mountain-foregroundNme_v2_pgilmp.png',
+    //   amount: 0,
+    // },
   ];
   return (
     <>
       <ParallaxProvider>
         <div className="vertical">
           <div className={ParallaxBannerStyles.bannerContainer}>
+
             <ParallaxBanner
               className={ParallaxBannerStyles.bannerBg}
               layers={layers}
               style={{ height: '80vh', maxHeight: '720px' }}
             >
-              <div className={ParallaxBannerStyles.parallaxChildren}>
+              <div
+                className={ParallaxBannerStyles.parallaxChildren}
+              >
                 <Container maxWidth="md">
                   <div className={classes.root}>
                     <Grid
@@ -76,9 +80,8 @@ const HomeHero = (/* props */) => {
                       spacing={3}
                     >
                       {/* <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid> */}
-
+                      <Paper className={classes.paper}>xs=12</Paper>
+                    </Grid> */}
                       <Grid
                         item
                         xs={12}
@@ -117,10 +120,10 @@ const HomeHero = (/* props */) => {
                           className={classes.typography}
                         >
                           {`I_love: [ 
-    Coding with a clear and practical style 👾,
-    Solving problems🚀,
-    Being outdoors ⛰‍,
-    Hard rock 👹]`}
+                Coding with a clear and practical style 👾,
+                Solving problems🚀,
+                Being outdoors ⛰‍,
+                Hard rock 👹]`}
                         </Typography>
                       </Grid>
                       <Grid
@@ -152,8 +155,17 @@ const HomeHero = (/* props */) => {
                     </Grid>
                   </div>
                 </Container>
+                <img
+                  src="https://res.cloudinary.com/hhdcknvdc/image/upload/v1623709331/landingPage/mountain-foregroundNme__xcbhjo.png"
+                  // onClick={() => console.log('onClick')}
+                  // aspectRatio={(16 / 9)}
+                  style={{ width: '100%', height: 'auto', marginTop: '-80%' }}
+                  // disableSpinner
+                  alt="me"
+                />
               </div>
             </ParallaxBanner>
+
           </div>
         </div>
       </ParallaxProvider>
