@@ -3,6 +3,9 @@ import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { THEMES } from '../constants';
 import { lightShadows, darkShadows } from './shadows';
 
+const brandColorDark = '#27153E';
+const brandColorOrange = '#D95323';
+
 const baseOptions = {
   direction: 'ltr',
   components: {
@@ -124,6 +127,10 @@ const themesOptions = {
       }
     },
     palette: {
+      brandColor: {
+        main: brandColorDark,
+        accent: brandColorOrange,
+      },
       action: {
         active: '#6b778c'
       },
@@ -166,11 +173,15 @@ const themesOptions = {
       }
     },
     palette: {
+      brandColor: {
+        main: '#fff',
+        accent: brandColorOrange,
+      },
       background: {
         default: '#171c24',
-        paper: '#222b36'
+        paper: brandColorDark
       },
-      divider: 'rgba(145, 158, 171, 0.24)',
+      divider: 'rgba(191,56,26, 1)',
       error: {
         contrastText: '#ffffff',
         main: '#f44336'
