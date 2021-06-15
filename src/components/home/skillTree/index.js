@@ -1,1 +1,1 @@
-export { default as SkillTree } from './SkillTree';
+export { default as SkillBranch } from './SkillBranch';
