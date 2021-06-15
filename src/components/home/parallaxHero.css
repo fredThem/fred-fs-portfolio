@@ -23,11 +23,11 @@
 }
 
 .parallax-banner-layer-1 {
-  background-size: 100% !important;
+  /* background-size: 100% !important;*/
   /* position: absolute; */
-  background-position: 0px 70% !important;
-  inset: 0% 0px !important;
-  background-origin: content-box, padding-box !important;
+  background-position: 0px bottom !important;
+  /* inset: 0% 0px !important; */
+  /* background-origin: content-box, padding-box !important; */
 
 }
 
@@ -37,4 +37,14 @@
   background-position: bottom !important;
 inset: inherit !important;
 
+}
+
+img.heroBanner {
+  width: 100%;
+  height: auto;
+  margin-top: -80%;
+  object-fit: cover;
+  object-position: 80% top;
+  margin-top: -80%;
+  height: 40%;
 }
