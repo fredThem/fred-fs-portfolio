@@ -4,3 +4,4 @@ export { default as HomeHero } from './HomeHero';
 export { default as HomeOverview } from './HomeOverview';
 export { default as HomeRoles } from './HomeRoles';
 export { default as HomeTestimonials } from './HomeTestimonials';
+export { default as HomeSkillTree } from './HomeSkillTree';

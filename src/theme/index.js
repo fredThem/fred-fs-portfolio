@@ -1,3 +1,4 @@
+import '@fontsource/fira-code';
 import merge from 'lodash/merge';
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { THEMES } from '../constants';
@@ -43,6 +44,9 @@ const baseOptions = {
         },
         '#nprogress .bar': {
           zIndex: '2000 !important'
+        },
+        '.codeFont': {
+
         }
       }
     },
@@ -108,6 +112,9 @@ const baseOptions = {
     },
     overline: {
       fontWeight: 600
+    },
+    code: {
+      fontFamily: 'Fira Code'
     }
   }
 };

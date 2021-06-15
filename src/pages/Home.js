@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import {
   HomeClients,
   HomeHero,
-  HomeOverview,
+  HomeSkillTree,
+  // HomeOverview,
   HomeRoles,
   HomeFeatures,
   HomeTestimonials
@@ -22,7 +23,7 @@ const Home = () => {
       </Helmet>
       <div>
         <HomeHero />
-        <HomeOverview />
+        <HomeSkillTree />
         <HomeRoles />
         <HomeTestimonials />
         <HomeFeatures />
