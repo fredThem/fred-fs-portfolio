@@ -42,9 +42,21 @@ inset: inherit !important;
 img.heroBanner {
   width: 100%;
   height: auto;
-  margin-top: -80%;
+  margin-top: -50%;
   object-fit: cover;
-  object-position: 80% top;
-  margin-top: -80%;
-  height: 40%;
+  /* object-position: 90% top; */
+  /* margin-top: -80%; */
+  /* height: 40%; */
+}
+
+@media (max-width: 767.98px){
+  img.heroBanner {
+    width: 100%;
+    height: auto;
+    margin-top: -80%;
+    object-fit: cover;
+    object-position: 80% top;
+    margin-top: -80%;
+    height: 40%;
+  }
 }
