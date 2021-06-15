@@ -3,9 +3,24 @@ import merge from 'lodash/merge';
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { THEMES } from '../constants';
 import { lightShadows, darkShadows } from './shadows';
+import NoeDisplayWoff2 from '../fonts/NoeDisplay-Black.woff2';
 
 const brandColorDark = '#27153E';
 const brandColorOrange = '#D95323';
+
+const noeDisplay = {
+  fontFamily: 'NoeDisplay',
+  // fontStyle: 'normal',
+  // fontDisplay: 'swap',
+  // fontWeight: 400,
+  src: `
+    local('NoeDisplay'),
+    local('NoeDisplay-Regular'),
+    url(${NoeDisplayWoff2}) format('woff2')
+  `,
+  unicodeRange:
+    'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
+};
 
 const baseOptions = {
   direction: 'ltr',
@@ -26,6 +41,9 @@ const baseOptions = {
       }
     },
     MuiCssBaseline: {
+      '@global': {
+        '@font-face': [noeDisplay],
+      },
       styleOverrides: {
         '*': {
           boxSizing: 'border-box'
@@ -88,7 +106,8 @@ const baseOptions = {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
     h1: {
       fontWeight: 600,
-      fontSize: '3.5rem'
+      fontSize: '3.5rem',
+      fontFamily: 'NoeDisplay',
     },
     h2: {
       fontWeight: 600,

@@ -1,8 +1,6 @@
 import propTypes from 'prop-types';
 import { Box, Divider, Typography } from '@material-ui/core';
 // import CheckIcon from '../../icons/Check';
-// eslint-disable-next-line no-unused-vars
-import { skillApi } from './SkillApi';
 
 const SkillBranch = (props) => {
   const { title, sx, ...other } = props;

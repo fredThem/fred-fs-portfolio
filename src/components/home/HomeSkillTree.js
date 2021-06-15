@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 
+// eslint-disable-next-line no-unused-vars
 import { SkillBranch } from './skillTree';
 import gtm from '../../lib/gtm';
 // import GiPlasticDuck from 'giPlasticDuck'
@@ -29,6 +30,7 @@ const HomeSkillTree = () => {
     })();
   }, [theme.palette.mode]);
 
+  console.log('skillApi');
   return (
     <>
       <Box
@@ -51,7 +53,7 @@ const HomeSkillTree = () => {
               spacing={2}
               flexWrap="nowrap"
               borderBottom={1}
-              pb={2}
+              pb={1}
             >
               <Grid
                 item
@@ -60,23 +62,16 @@ const HomeSkillTree = () => {
               >
                 <Typography
                   color="brandColor.main"
-                  variant="code h2"
+                  variant="h1"
+                  display="flex"
+                  gap={1}
                 >
                   <GiPlasticDuck />
                   {' '}
-                  Skill stack
+                  Skill Stack
                 </Typography>
               </Grid>
-              {/* <Grid
-                item
-                md={5}
-                sx={{
-                  display: {
-                    md: 'block',
-                    xs: 'none'
-                  }
-                }}
-              /> */}
+
             </Grid>
           </Container>
         </Box>
