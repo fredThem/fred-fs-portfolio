@@ -1,3 +1,12 @@
+import MovieFilterIcon from '@material-ui/icons/MovieFilter';
+import ColorLensIcon from '@material-ui/icons/ColorLens';
+import LocalPrintshopIcon from '@material-ui/icons/LocalPrintshop';
+import TrackChangesIcon from '@material-ui/icons/TrackChanges';
+import BugReportIcon from '@material-ui/icons/BugReport';
+import ForumIcon from '@material-ui/icons/Forum';
+import MemoryIcon from '@material-ui/icons/Memory';
+import StorageIcon from '@material-ui/icons/Storage';
+import SecurityIcon from '@material-ui/icons/Security';
 import StyleIcon from '@material-ui/icons/Style';
 import DevicesOtherIcon from '@material-ui/icons/DevicesOther';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
@@ -18,7 +27,11 @@ import gtm from '../../lib/gtm';
 // import { FaBeer } from 'react-icons/fa';
 import { GiPlasticDuck } from 'react-icons/gi';
 
-const skillsApi = { FrontEnd: { title: 'Frontend', }, BackEnd: { title: 'BackEnd' }, Design: { title: 'Design' } };
+const skillsApi = {
+  FrontEnd: { title: 'Frontend' },
+  BackEnd: { title: 'BackEnd' },
+  Design: { title: 'Design' },
+};
 
 console.log(skillsApi);
 const HomeSkillTree = () => {
@@ -44,18 +57,79 @@ const HomeSkillTree = () => {
 
   const frontEndReferrals = [
     {
-      color: '#455a64',
-      initials: 'GT',
       name: 'HTML',
-      value: 53032,
-      technologies: '[Semantics, Forms & Validation, Accessibility]',
-      startYear: 2013,
+      technologies:
+        '[Semantics, Forms & Validation, Accessibility, Best practices]',
+      startYear: 2021 - 9,
     },
     {
       name: 'CSS',
-      technologies: '[Semantics, Forms &#x26; Validation, Accessibility]',
-      startYear: 2011,
-    }
+      technologies: '[Layouts, Responsive design and Media Queries]',
+      startYear: 2021 - 9,
+    },
+    {
+      name: 'CSS Frameworks',
+      technologies: '[Bootstrap, Material UI, Tailwind CSS]',
+      startYear: 2021 - 5,
+    },
+
+    {
+      name: 'Javascript',
+      technologies: '[DOM manipulation, Fetch API / Ajax, Es6+]',
+      startYear: 2021 - 3,
+    },
+    {
+      name: 'Version Control Systems',
+      technologies: '[Git, GitHub, Git-Kraken]',
+      startYear: 2021 - 3,
+    },
+    {
+      name: 'Mailing',
+      technologies: '[Acoustic automated campaign]',
+      startYear: 2021 - 3,
+    },
+    {
+      name: 'CSS Preprocessors',
+      technologies: '[Sass, PostCSS]',
+      startYear: 2021 - 3,
+    },
+    {
+      name: 'Framework',
+      technologies: '[React.js, Redux, Ruby on Rails]',
+      startYear: 2021 - 1,
+    },
+    {
+      name: 'Modern CSS',
+      technologies: '[CSS Modules, Styled Components, Emotion]',
+      startYear: 2021 - 1,
+    },
+    {
+      name: 'Build Tools',
+      technologies: '[npm scripts, Linters and Formatters(Prettier, Eslint)]',
+      startYear: 2021 - 1,
+    },
+    {
+      name: 'Test Driven Developement',
+      technologies: '[Jest, Storybookjs]',
+      startYear: 2021 - 1,
+    },
+    {
+      name: 'Static Site Generators',
+      technologies: '[Create React App, GatsbyJS]',
+      startYear: 2021 - 0,
+    },
+    {
+      name: 'Type Checkers',
+      technologies: '[Flow, TypeScript]',
+      startYear: 2021,
+    },
+    {
+      name: 'GraphQL',
+      technologies: '[Apollo]',
+      startYear: 2021,
+    },
+
+    // {GraphQL [Apollo]}
   ];
   const BackEndReferrals = [
     {
@@ -64,10 +138,92 @@ const HomeSkillTree = () => {
       startYear: 2020,
     },
     {
+      name: 'Languages',
+      technologies: '[Ruby, JavaScript]',
+      startYear: 2020,
+    },
+    {
       name: 'Terminal',
       technologies: '[zsh, brew]',
       startYear: 2020,
-    }
+    },
+    {
+      name: 'Framework',
+      technologies: '[Ruby on Rails, Firebase]',
+      startYear: 2020,
+    },
+    {
+      name: 'Relational Databases',
+      technologies: '[PostgreSQL]',
+      startYear: 2020,
+    },
+    {
+      name: 'Object Relational Mapping',
+      technologies: '[Active Record]',
+      startYear: 2020,
+    },
+    {
+      name: 'MVC design patterns',
+      technologies: '',
+      startYear: 2020,
+    },
+    {
+      name: 'CI / CD',
+      technologies:
+        '[Storybook (Chromatic PR), Heroku pipeline, Gitflow, Git-Slack, GitLens, GitKraken, CodeStream]',
+      startYear: 2020,
+    },
+    {
+      name: 'Caching',
+      technologies: '[CDN]',
+      startYear: 2020,
+    },
+    {
+      name: 'Search Engines',
+      technologies: '[Elasticsearch]',
+      startYear: 2020,
+    },
+    {
+      name: 'API',
+      technologies: '',
+      startYear: 2020,
+    },
+    {
+      name: 'Design and Development Principles',
+      technologies: '[TDD, DRY]',
+      startYear: 2020,
+    },
+    {
+      name: 'Progressive Web Apps',
+      technologies:
+        '[DevTools, Performance, Metric, Storage, Location, WebSockets, Geocoding]',
+      startYear: 2020,
+    },
+  ];
+
+  const DesignReferrals = [
+    { name: 'Agile Methodology', technologies: '', startYear: 2020 - 8 },
+    { name: 'Assets optimization', technologies: '', startYear: 2020 - 8 },
+    { name: 'Design systems', technologies: '', startYear: 2020 - 8 },
+    { name: 'Campaign Design', technologies: '', startYear: 2020 - 8 },
+    { name: 'Motion Design', technologies: '', startYear: 2020 - 8 },
+    { name: 'Typography', technologies: '', startYear: 2020 - 8 },
+    { name: 'Illustration', technologies: '', startYear: 2020 - 8 },
+    { name: 'Print', technologies: '', startYear: 2020 - 8 },
+    { name: 'Photoshop', technologies: '', startYear: 2020 - 8 },
+    { name: 'Illustrator', technologies: '', startYear: 2020 - 8 },
+    { name: 'Wire-framing', technologies: '', startYear: 2020 - 5 },
+    { name: 'Functional mockups', technologies: '', startYear: 2020 - 5 },
+    { name: 'User Experience', technologies: '', startYear: 2020 - 5 },
+    {
+      name: 'Branding, Advertising, Marketing',
+      technologies: '',
+      startYear: 2020 - 5,
+    },
+    { name: 'After Effect', technologies: '', startYear: 2020 - 5 },
+    { name: 'Figma, Sketch', technologies: '', startYear: 2020 - 5 },
+    { name: 'Video editing', technologies: '', startYear: 2020 - 3 },
+    { name: 'Photography', technologies: '', startYear: 2020 - 3 },
   ];
   return (
     <>
@@ -118,13 +274,11 @@ const HomeSkillTree = () => {
                   display="flex"
                   gap={1}
                 >
-
                   Show&apos;s years experience since over professional career
                   {' '}
                   <EqualizerIcon fontSize="large" />
                 </Typography>
               </Grid>
-
             </Grid>
           </Container>
         </Box>
@@ -149,7 +303,7 @@ const HomeSkillTree = () => {
                   <CategoryIcon />,
                   <AccessibilityIcon />,
                   <DonutSmallIcon />,
-                  <Brightness4Icon />
+                  <Brightness4Icon />,
                 ]}
                 // currency="$"
                 // description="To familiarize yourself with our tools."
@@ -174,12 +328,12 @@ const HomeSkillTree = () => {
               <SkillBranch
                 title={skillsApi.BackEnd.title}
                 pictograms={[
-                  <StyleIcon />,
-                  <DevicesOtherIcon />,
-                  <CategoryIcon />,
-                  <AccessibilityIcon />,
-                  <DonutSmallIcon />,
-                  <Brightness4Icon />
+                  <SecurityIcon />,
+                  <StorageIcon />,
+                  <MemoryIcon />,
+                  <ForumIcon />,
+                  <BugReportIcon />,
+                  <TrackChangesIcon />,
                 ]}
                 // currency="$"
                 // description="To familiarize yourself with our tools."
@@ -195,28 +349,6 @@ const HomeSkillTree = () => {
                 element={<GroupedList2 referrals={BackEndReferrals} />}
               />
             </Grid>
-
-            <Grid
-              item
-              md={4}
-              xs={12}
-            >
-              <SkillBranch
-                title={skillsApi.BackEnd.title}
-                // currency="$"
-                // description="To familiarize yourself with our tools."
-                // features={['Create contracts', 'Chat support', 'Email alerts']}
-                // image="/static/pricing/plan1.svg"
-                // name="&#x3C;FrontEnd/&#x3E;"
-                // price="0"
-                sx={{
-                  height: '100%',
-                  maxWidth: 460,
-                  mx: 'auto',
-                }}
-              />
-            </Grid>
-
             <Grid
               item
               md={4}
@@ -224,6 +356,14 @@ const HomeSkillTree = () => {
             >
               <SkillBranch
                 title={skillsApi.Design.title}
+                pictograms={[
+                  <LocalPrintshopIcon />,
+                  <ColorLensIcon />,
+                  <CategoryIcon />,
+                  <MovieFilterIcon />,
+                  // <DonutSmallIcon />,
+                  // <Brightness4Icon />,
+                ]}
                 // currency="$"
                 // description="To familiarize yourself with our tools."
                 // features={['Create contracts', 'Chat support', 'Email alerts']}
@@ -235,9 +375,9 @@ const HomeSkillTree = () => {
                   maxWidth: 460,
                   mx: 'auto',
                 }}
+                element={<GroupedList2 referrals={DesignReferrals} />}
               />
             </Grid>
-
           </Grid>
         </Container>
         {/* <Typography

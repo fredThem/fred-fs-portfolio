@@ -17,16 +17,17 @@ import {
 } from '@material-ui/core';
 // import ProgressLine from '../../home/ProgressLine';
 
-const now = new Date();
-const debutYear = 2014;
-const yearsOfExperience = now.getFullYear() - debutYear;
-
+// console.log(totalYearsOfExperience);
 // const experience(percentage) =
 
 const GroupedList2 = (props) => {
   const { referrals } = props;
-  function percentage(num, per) {
-    return (num / 100) * per;
+  const now = new Date();
+  const debutYear = 2012;
+  const totalYearsOfExperience = now.getFullYear() - debutYear;
+  console.log(totalYearsOfExperience);
+  function percentage(partialValue, totalValue) {
+    return (100 * partialValue) / totalValue;
   }
 
   return (
@@ -73,7 +74,7 @@ const GroupedList2 = (props) => {
                 mb={1}
                 // display="block"
               >
-                {/* {console.log(percentage(((now.getFullYear() - (new Date(referral.startYear))) * 100), yearsOfExperience))} */}
+                {/* {console.log(percentage(((now.getFullYear() - (new Date(referral.startYear))) * 100), totalYearsOfExperience))} */}
                 {referral.technologies}
                 {/* {now.getFullYear() - (new Date(referral.startYear))} */}
                 {/* {numeral(referral.startYear).format('0,0')} */}
@@ -98,13 +99,15 @@ const GroupedList2 = (props) => {
               >
                 <LinearProgress
                 // variant="determinate"
-                  value={percentage(((now.getFullYear() - (new Date(referral.startYear))) * 100), yearsOfExperience)}
+                  // value={ percentage(totalYearsOfExperience,((10 - (new Date(referral.startYear)))}
+                  value={percentage(now.getFullYear() - (new Date(referral.startYear)), totalYearsOfExperience)}
                   variant="determinate"
                 // color="red"
                 // value="80"
                 // width="100%"
                   sx={{ width: '100%' }}
                 />
+
               </Grow>
               {/* <Chart
                 // height="350"
