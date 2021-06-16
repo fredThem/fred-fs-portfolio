@@ -1,26 +1,33 @@
+// import Chart from 'react-apexcharts';
 import propTypes from 'prop-types';
 // import propTypes from 'prop-types';
 // import { differenceInYears } from 'date-fns';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 // import numeral from 'numeral';
+
 import {
   Box,
   Container,
   List,
   ListItem,
   ListItemText,
-  Typography
+  Typography,
+  Grow
 } from '@material-ui/core';
+// import ProgressLine from '../../home/ProgressLine';
 
 const now = new Date();
-// const yearTotal = ()
+const debutYear = 2014;
+const yearsOfExperience = now.getFullYear() - debutYear;
+
+// const experience(percentage) =
 
 const GroupedList2 = (props) => {
   const { referrals } = props;
-
-  // console.log(
-  //   now
-  // );
+  function percentage(num, per) {
+    return (num / 100) * per;
+  }
 
   return (
     <Box
@@ -36,28 +43,75 @@ const GroupedList2 = (props) => {
       >
 
         <List disablePadding>
-          {referrals.map((referral, i) => (
+          {referrals.map((referral) => (
             <ListItem
-              divider={i < referrals.length - 1}
+              // divider={i < referrals.length - 1}
               key={referral.name}
               px={0}
               disableGutters
+              divider={false}
+              display="flex"
+              sx={{
+                flexDirection: 'column',
+                justifyContent: 'end',
+                alignItems: 'stretch'
+              }}
+
             >
 
               <ListItemText
                 primary={referral.name}
                 primaryTypographyProps={{
                   color: 'textPrimary',
-                  variant: 'subtitle1'
+                  variant: 'h5'
                 }}
               />
+
               <Typography
                 color="textSecondary"
                 variant="body2"
+                mb={1}
+                // display="block"
               >
-                {now.getFullYear() - (new Date(referral.startYear))}
+                {/* {console.log(percentage(((now.getFullYear() - (new Date(referral.startYear))) * 100), yearsOfExperience))} */}
+                {referral.technologies}
+                {/* {now.getFullYear() - (new Date(referral.startYear))} */}
                 {/* {numeral(referral.startYear).format('0,0')} */}
               </Typography>
+              {/* <ProgressLine
+                label="One visual percentage - changed background"
+                backgroundColor="lightblue"
+                visualParts={[
+                  {
+                    percentage: '23%',
+                    color: 'indianred'
+                  }
+                ]}
+              /> */}
+              <Grow
+                timeout={{
+                  appear: 500,
+                  enter: 300,
+                  //  exit: 500,
+                }}
+                in
+              >
+                <LinearProgress
+                // variant="determinate"
+                  value={percentage(((now.getFullYear() - (new Date(referral.startYear))) * 100), yearsOfExperience)}
+                  variant="determinate"
+                // color="red"
+                // value="80"
+                // width="100%"
+                  sx={{ width: '100%' }}
+                />
+              </Grow>
+              {/* <Chart
+                // height="350"
+                options={chartOptions}
+                series={chartSeries}
+                type="bar"
+              /> */}
             </ListItem>
           ))}
         </List>

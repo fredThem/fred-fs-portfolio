@@ -12,7 +12,7 @@ const theme = createTheme({
 });
 
 const SkillBranch = (props) => {
-  const { title, element, sx, ...other } = props;
+  const { title, element, pictograms, sx, ...other } = props;
   // const Skill = skill;
   return (
 
@@ -23,9 +23,15 @@ const SkillBranch = (props) => {
           flexDirection: 'column',
           ...sx
         }}
+        mt={0}
+        pt={0}
         {...other}
       >
-        <Box sx={{ p: 3 }}>
+        <Box
+          // sx={{ p: 0 }}
+          py={0}
+          px={3}
+        >
           <Box
             sx={{
               height: 52,
@@ -38,8 +44,11 @@ const SkillBranch = (props) => {
           />
           <Typography
             color="textPrimary"
-            sx={{ mt: 2 }}
+            // sx={{ mt: 0 }}
             variant="h4"
+            mt={0}
+            pt={0}
+            mb={1}
           >
             &#x3C;
             {title}
@@ -50,6 +59,14 @@ const SkillBranch = (props) => {
               alt=""
               src={image}
             /> */}
+          <Typography
+            display="flex"
+            gap={2}
+            mb={2}
+          >
+            {pictograms}
+
+          </Typography>
         </Box>
         <Divider />
 
@@ -60,7 +77,7 @@ const SkillBranch = (props) => {
             display: 'flex',
             flexDirection: 'column',
             flexGrow: 1,
-            p: 1
+            py: 1
           }}
         >
           {element}
@@ -103,7 +120,7 @@ const SkillBranch = (props) => {
 SkillBranch.propTypes = {
   title: propTypes.string.isRequired,
   element: propTypes.string.isRequired,
-  // description: propTypes.string.isRequired,
+  pictograms: propTypes.array.isRequired,
   // features: propTypes.array.isRequired,
   // image: propTypes.string.isRequired,
   // name: propTypes.string.isRequired,
