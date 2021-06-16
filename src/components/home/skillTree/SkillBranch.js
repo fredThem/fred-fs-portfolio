@@ -1,93 +1,108 @@
+import { createTheme } from '@material-ui/core/styles';
+
 import propTypes from 'prop-types';
-import { Box, Divider, Typography } from '@material-ui/core';
+import { Box, Divider, Typography, ThemeProvider } from '@material-ui/core';
 // import CheckIcon from '../../icons/Check';
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Fira Code'
+    ].join(','),
+  },
+});
 
 const SkillBranch = (props) => {
-  const { title, sx, ...other } = props;
+  const { title, element, sx, ...other } = props;
   // const Skill = skill;
   return (
 
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        ...sx
-      }}
-      {...other}
-    >
-      <Box sx={{ p: 3 }}>
-        <Box
-          sx={{
-            height: 52,
-            width: 52,
-            '& img': {
-              height: 'auto',
-              width: '100%'
-            }
-          }}
-        />
-        <Typography
-          color="textPrimary"
-          sx={{ mt: 2 }}
-          variant="h6"
-        >
-          {title}
-          {/* debugger */}
-
-        </Typography>
-        {/* <img
-            alt=""
-            src={image}
-          /> */}
-      </Box>
-      <Divider />
-      {/* <Box
+    <ThemeProvider theme={theme}>
+      <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          flexGrow: 1,
-          p: 3
+          ...sx
         }}
+        {...other}
       >
-        {skillApi.map((skill) => (
+        <Box sx={{ p: 3 }}>
           <Box
-            // key={skill.name}
             sx={{
-              alignItems: 'center',
-              display: 'flex',
-              '& + &': {
-                mt: 2
+              height: 52,
+              width: 52,
+              '& img': {
+                height: 'auto',
+                width: '100%'
               }
             }}
+          />
+          <Typography
+            color="textPrimary"
+            sx={{ mt: 2 }}
+            variant="h4"
           >
-            <Typography
-              color="textPrimary"
-              sx={{
-                fontWeight: 500,
-                ml: 2
-              }}
-              variant="body2"
-            >
-              {skill[0].name}
-            </Typography>
-          </Box>
-        ))}
-        <Box sx={{ flexGrow: 1 }} />
+            &#x3C;
+            {title}
+            /&#x3E;
+            {/* debugger */}
+          </Typography>
+          {/* <img
+              alt=""
+              src={image}
+            /> */}
+        </Box>
+        <Divider />
+
+        { }
+
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'center',
-            mt: 6
+            flexDirection: 'column',
+            flexGrow: 1,
+            p: 3
           }}
-        />
-      </Box> */}
-    </Box>
+        >
+          {element}
+          {/* {skillApi.map((skill) => (
+            <Box
+              sx={{
+                alignItems: 'center',
+                display: 'flex',
+                '& + &': {
+                  mt: 2
+                }
+              }}
+            >
+              <Typography
+                color="textPrimary"
+                sx={{
+                  fontWeight: 500,
+                  ml: 2
+                }}
+                variant="body2"
+              >
+                {skill[0].name}
+              </Typography>
+            </Box>
+          ))} */}
+          <Box sx={{ flexGrow: 1 }} />
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              mt: 6
+            }}
+          />
+        </Box>
+      </Box>
+    </ThemeProvider>
   );
 };
 
 SkillBranch.propTypes = {
   title: propTypes.string.isRequired,
-  // currency: propTypes.string.isRequired,
+  element: propTypes.string.isRequired,
   // description: propTypes.string.isRequired,
   // features: propTypes.array.isRequired,
   // image: propTypes.string.isRequired,
