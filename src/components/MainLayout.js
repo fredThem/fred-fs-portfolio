@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Outlet } from 'react-router-dom';
 import { experimentalStyled } from '@material-ui/core/styles';
-import Footer from './Footer';
+// import Footer from './Footer';
 import MainNavbar from './MainNavbar';
 import MainSidebar from './MainSidebar';
 
@@ -23,7 +23,7 @@ const MainLayout = ({ children }) => {
         openMobile={isSidebarMobileOpen}
       />
       {children || <Outlet />}
-      <Footer />
+      {/* <Footer /> */}
     </MainLayoutRoot>
   );
 };

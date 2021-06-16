@@ -15,7 +15,7 @@ const HomeClients = (props) => (
         sx={{ pb: 6 }}
         variant="h3"
       >
-        Your clients will love it
+        Noteworthy projects
       </Typography>
       <Grid
         container
@@ -29,7 +29,7 @@ const HomeClients = (props) => (
           <Card
             sx={{
               backgroundColor: 'primary.main',
-              height: '100%',
+              height: 'auto',
               px: 2,
               py: 10,
               position: 'relative'
@@ -39,7 +39,7 @@ const HomeClients = (props) => (
               sx={{ color: 'primary.contrastText' }}
               variant="h5"
             >
-              Documentation
+              Outrek
             </Typography>
             <Typography
               sx={{
@@ -49,14 +49,15 @@ const HomeClients = (props) => (
               }}
               variant="body2"
             >
-              How to get started with Material Kit Pro
+              Organize Your Next Trip Outdoors With
+
             </Typography>
             <Link
-              href="/docs"
+              href="https://outrek.herokuapp.com/"
               sx={{ color: 'primary.contrastText' }}
               variant="body2"
             >
-              Getting started guide
+              Outrek&apos;s Collaborative Packing List
             </Link>
             <Box
               sx={{
@@ -66,15 +67,19 @@ const HomeClients = (props) => (
                 right: 0,
                 top: 0,
                 '& img': {
-                  height: '100%',
-                  maxWidth: '100%'
+                  // height: '100%',
+                  maxWidth: '100%',
+                  objectFit: 'fit'
                 }
               }}
             >
               <img
+                width="100%"
+                // height="auto"
+                // sx={{ objectFit: 'cover' }}
                 alt="Rocket"
                 loading="lazy"
-                src="/static/home/cta-rocket.svg"
+                src="/static/home/outrek.png"
               />
             </Box>
           </Card>
@@ -110,11 +115,11 @@ const HomeClients = (props) => (
               Browse through numerous screens
             </Typography>
             <Link
-              href="/browse"
+              href="https://rentrek-scionet.herokuapp.com/"
               sx={{ color: 'primary.contrastText' }}
               variant="body2"
             >
-              Browse Components
+              Outrek&apos;s Collaborative Packing List
             </Link>
             <Box
               sx={{
@@ -124,15 +129,19 @@ const HomeClients = (props) => (
                 right: 0,
                 top: 0,
                 '& img': {
-                  height: '100%',
-                  maxWidth: '100%'
+                  // height: '100%',
+                  maxWidth: '100%',
+                  objectFit: 'fit'
                 }
               }}
             >
               <img
-                alt="Code"
+                width="100%"
+                // height="auto"
+                // sx={{ objectFit: 'cover' }}
+                alt="Rocket"
                 loading="lazy"
-                src="/static/home/cta-code.svg"
+                src="/static/home/rentrek.png"
               />
             </Box>
           </Card>

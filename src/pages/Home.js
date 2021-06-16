@@ -5,9 +5,9 @@ import {
   HomeHero,
   HomeSkillTree,
   // HomeOverview,
-  HomeRoles,
-  HomeFeatures,
-  HomeTestimonials
+  // HomeRoles,
+  // HomeFeatures,
+  // HomeTestimonials
 } from '../components/home';
 import gtm from '../lib/gtm';
 
@@ -24,9 +24,9 @@ const Home = () => {
       <div>
         <HomeHero />
         <HomeSkillTree />
-        <HomeRoles />
-        <HomeTestimonials />
-        <HomeFeatures />
+        {/* <HomeRoles /> */}
+        {/* <HomeTestimonials /> */}
+        {/* <HomeFeatures /> */}
         <HomeClients />
       </div>
     </>
