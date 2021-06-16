@@ -43,7 +43,7 @@ const SkillBranch = (props) => {
             }}
           />
           <Typography
-            color="textPrimary"
+            // color="textPrimary"
             // sx={{ mt: 0 }}
             variant="h4"
             mt={0}
