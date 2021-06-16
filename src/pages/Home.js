@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import {
-  HomeClients,
+  // HomeClients,
   HomeHero,
   HomeSkillTree,
   // HomeOverview,
-  // HomeRoles,
+  HomeRoles,
   // HomeFeatures,
   // HomeTestimonials
 } from '../components/home';
@@ -24,10 +24,10 @@ const Home = () => {
       <div>
         <HomeHero />
         <HomeSkillTree />
-        {/* <HomeRoles /> */}
+        <HomeRoles />
         {/* <HomeTestimonials /> */}
         {/* <HomeFeatures /> */}
-        <HomeClients />
+        {/* <HomeClients /> */}
       </div>
     </>
   );

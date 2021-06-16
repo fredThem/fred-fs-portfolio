@@ -1,3 +1,8 @@
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import FormatShapesIcon from '@material-ui/icons/FormatShapes';
+import PolicyIcon from '@material-ui/icons/Policy';
+import ExtensionIcon from '@material-ui/icons/Extension';
+import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
 import MovieFilterIcon from '@material-ui/icons/MovieFilter';
 import ColorLensIcon from '@material-ui/icons/ColorLens';
 import LocalPrintshopIcon from '@material-ui/icons/LocalPrintshop';
@@ -6,14 +11,14 @@ import BugReportIcon from '@material-ui/icons/BugReport';
 import ForumIcon from '@material-ui/icons/Forum';
 import MemoryIcon from '@material-ui/icons/Memory';
 import StorageIcon from '@material-ui/icons/Storage';
-import SecurityIcon from '@material-ui/icons/Security';
+// import SecurityIcon from '@material-ui/icons/Security';
 import StyleIcon from '@material-ui/icons/Style';
 import DevicesOtherIcon from '@material-ui/icons/DevicesOther';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import DonutSmallIcon from '@material-ui/icons/DonutSmall';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import CategoryIcon from '@material-ui/icons/Category';
-import EqualizerIcon from '@material-ui/icons/Equalizer';
+// import EqualizerIcon from '@material-ui/icons/Equalizer';
 import { useState, useEffect } from 'react';
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
@@ -24,7 +29,6 @@ import GroupedList2 from '../widgets/grouped-lists/GroupedList2';
 import { SkillBranch } from './skillTree';
 import gtm from '../../lib/gtm';
 // import GiPlasticDuck from 'giPlasticDuck'
-// import { FaBeer } from 'react-icons/fa';
 import { GiPlasticDuck } from 'react-icons/gi';
 
 const skillsApi = {
@@ -258,7 +262,7 @@ const HomeSkillTree = () => {
                 alignItems="center"
               >
                 <Typography
-                  color="brandColor.main"
+                  // color="brandColor.main"
                   variant="h1"
                   display="flex"
                   gap={1}
@@ -268,15 +272,17 @@ const HomeSkillTree = () => {
                   Skill Stack
                 </Typography>
                 <Typography
-                  color="brandColor.main"
+                  // color="brandColor.main"
                   // variant="h1"
                   variant="caption"
                   display="flex"
                   gap={1}
+                  fontFamily="Fira Code"
                 >
-                  Show&apos;s years experience since over professional career
+                  <FormatAlignLeftIcon fontSize="small" />
+                  Progress ==&#x3E; Years experience / professional career
+                  &#123; Est.2014 &#125;
                   {' '}
-                  <EqualizerIcon fontSize="large" />
                 </Typography>
               </Grid>
             </Grid>
@@ -328,12 +334,15 @@ const HomeSkillTree = () => {
               <SkillBranch
                 title={skillsApi.BackEnd.title}
                 pictograms={[
-                  <SecurityIcon />,
+                  // <SecurityIcon />,
                   <StorageIcon />,
                   <MemoryIcon />,
                   <ForumIcon />,
                   <BugReportIcon />,
                   <TrackChangesIcon />,
+                  <PolicyIcon />,
+                  <GroupAddIcon />
+
                 ]}
                 // currency="$"
                 // description="To familiarize yourself with our tools."
@@ -359,9 +368,9 @@ const HomeSkillTree = () => {
                 pictograms={[
                   <LocalPrintshopIcon />,
                   <ColorLensIcon />,
-                  <CategoryIcon />,
+                  <FormatShapesIcon />,
                   <MovieFilterIcon />,
-                  // <DonutSmallIcon />,
+                  <ExtensionIcon />,
                   // <Brightness4Icon />,
                 ]}
                 // currency="$"
