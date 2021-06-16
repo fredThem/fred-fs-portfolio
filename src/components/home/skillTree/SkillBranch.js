@@ -60,7 +60,7 @@ const SkillBranch = (props) => {
             display: 'flex',
             flexDirection: 'column',
             flexGrow: 1,
-            p: 3
+            p: 1
           }}
         >
           {element}

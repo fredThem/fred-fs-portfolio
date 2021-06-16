@@ -35,12 +35,20 @@ const HomeSkillTree = () => {
     })();
   }, [theme.palette.mode]);
 
-  const testReferrals = [
+  const frontEndReferrals = [
     {
-      color: '#455a64',
+      technology: '#455a64',
       initials: 'GT',
-      name: 'GitHub',
-      value: 53032
+      name: 'HTML',
+      value: 53032,
+      startYear: 2013,
+    },
+    {
+      technology: '#455a64',
+      initials: 'GT',
+      name: 'CSS',
+      value: 53032,
+      startYear: 2013,
     }
     // {
     //   color: '#00bcd4',
@@ -155,7 +163,7 @@ const HomeSkillTree = () => {
                   maxWidth: 460,
                   mx: 'auto',
                 }}
-                element={<GroupedList2 referrals={testReferrals} />}
+                element={<GroupedList2 referrals={frontEndReferrals} />}
               />
             </Grid>
 
