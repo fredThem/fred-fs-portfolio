@@ -93,23 +93,7 @@ const MainNavbar = (/* props */) => {
               {' '}
               CV
             </Link>
-            {/* <Chip
-            color="primary"
-            label="NEW"
-            size="small"
-            sx={{
-              maxHeight: 20,
-              ml: 1,
-              mr: 2,
-            }}
-          /> */}
-            {/* <Divider
-            orientation="vertical"
-            sx={{
-              height: 32,
-              mx: 2,
-            }}
-          /> */}
+
             <Link
               color="textSecondary"
             // component={RouterLink}
@@ -140,9 +124,10 @@ const MainNavbar = (/* props */) => {
             />
             <Link
               color="textSecondary"
-              component={RouterLink}
-              to="/docs"
               underline="none"
+              target="_blank"
+              component="a"
+              href="https://www.linkedin.com/in/fredericDesmarais/"
               variant="body1"
               sx={{
                 alignItems: 'center',
