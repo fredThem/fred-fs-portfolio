@@ -20,7 +20,7 @@ import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import CategoryIcon from '@material-ui/icons/Category';
 // import EqualizerIcon from '@material-ui/icons/Equalizer';
 import { useState, useEffect } from 'react';
-import { Box, Container, Grid, Typography } from '@material-ui/core';
+import { Box, Container, Grid, Typography, LinearProgress } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 // import { GroupedList2 } from '../widgets/grouped-lists';
 import GroupedList2 from '../widgets/grouped-lists/GroupedList2';
@@ -241,17 +241,31 @@ const HomeSkillTree = () => {
         <Box
           sx={{
             backgroundColor: 'background.paper',
-            py: 6,
+            pb: 2,
+            position: 'sticky',
+            top: 0,
+            zIndex: 1000,
           }}
+          // elevation={2}
         >
-          <Container maxWidth="lg">
+          <Container
+            maxWidth="lg"
+            sx={{
+              backgroundColor: 'background.paper',
+              // py: 6,
+
+              // position: 'sticky',
+              // top: 0,
+            }}
+          >
             <Grid
               container
               alignItems="center"
               spacing={2}
               flexWrap="nowrap"
-              borderBottom={1}
-              pb={1}
+              // borderBottom={1}
+              pb={3}
+              pt="80px"
             >
               <Grid
                 item
@@ -271,6 +285,7 @@ const HomeSkillTree = () => {
                   {' '}
                   Skill Stack
                 </Typography>
+
                 <Typography
                   // color="brandColor.main"
                   // variant="h1"
@@ -286,6 +301,7 @@ const HomeSkillTree = () => {
                 </Typography>
               </Grid>
             </Grid>
+            <LinearProgress sx={{ width: '100%' }} />
           </Container>
         </Box>
         <Container

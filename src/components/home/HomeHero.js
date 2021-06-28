@@ -78,7 +78,12 @@ const HomeHero = (/* props */) => {
               <div
                 className={ParallaxBannerStyles.parallaxChildren}
               >
-                <Container maxWidth="md">
+                <Container
+                  maxWidth="md"
+                  sx={{
+                    zIndex: 1000,
+                  }}
+                >
                   <div className={classes.root}>
                     <Grid
                       container

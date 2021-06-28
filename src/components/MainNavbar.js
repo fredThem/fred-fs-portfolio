@@ -20,6 +20,7 @@ const MainNavbar = (/* props */) => {
     <ThemeProvider theme={themeDark}>
       <AppBar
         elevation={0}
+        position="fixed"
         sx={{
           backgroundColor: 'background.paper',
           color: 'text.secondary',
