@@ -2,7 +2,7 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import FormatShapesIcon from '@material-ui/icons/FormatShapes';
 import PolicyIcon from '@material-ui/icons/Policy';
 import ExtensionIcon from '@material-ui/icons/Extension';
-import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
+// import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
 import MovieFilterIcon from '@material-ui/icons/MovieFilter';
 import ColorLensIcon from '@material-ui/icons/ColorLens';
 import LocalPrintshopIcon from '@material-ui/icons/LocalPrintshop';
@@ -264,20 +264,22 @@ const HomeSkillTree = () => {
               spacing={2}
               flexWrap="nowrap"
               // borderBottom={1}
-              pb={3}
-              pt="80px"
+              pb={1}
+              pt="60px"
             >
               <Grid
                 item
                 md={12}
                 xs={12}
                 display="flex"
+                flexDirection="column"
                 justifyContent="space-between"
                 alignItems="center"
               >
                 <Typography
                   // color="brandColor.main"
                   variant="h1"
+                  // pb={1}
                   display="flex"
                   gap={1}
                 >
@@ -285,23 +287,31 @@ const HomeSkillTree = () => {
                   {' '}
                   Skill Stack
                 </Typography>
+                <Box>
 
-                <Typography
-                  // color="brandColor.main"
-                  // variant="h1"
-                  variant="caption"
-                  display="flex"
-                  gap={1}
-                  fontFamily="Fira Code"
-                >
-                  <FormatAlignLeftIcon fontSize="small" />
-                  Progress ==&#x3E; Years experience / professional career
-                  &#123; Est.2014 &#125;
-                  {' '}
-                </Typography>
+                  <Typography
+                    // color="brandColor.main"
+                    // variant="h1"
+                    variant="body1"
+                    display="flex"
+                    gap={1}
+                    pb={1}
+                    textAlign="center"
+                    fontFamily="Fira Code"
+                  >
+                    {/* <FormatAlignLeftIcon fontSize="small" /> */}
+                    * Years experience / professional career
+                    &#123;&nbsp;Est.2014&nbsp;&#125;
+                    {' '}
+                  </Typography>
+                  <LinearProgress
+                    // pt={3}/
+                    sx={{ width: '100%', opacity: '40%' }}
+                  />
+                </Box>
+
               </Grid>
             </Grid>
-            <LinearProgress sx={{ width: '100%' }} />
           </Container>
         </Box>
         <Container
