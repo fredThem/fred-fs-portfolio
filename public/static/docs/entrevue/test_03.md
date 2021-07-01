@@ -6,8 +6,8 @@ title: Absolunet Test
 
 Entrevue v2.0.2
 
-## 1. Écrire le HTML sémantique pour le contenu texte suivant
-[Contexte: Page de contact du site d'Absolunet]
+## 3. Améliorer ce code SCSS 
+(tout peut être changé)
 
 
 ```html

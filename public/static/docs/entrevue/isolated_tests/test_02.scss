@@ -9,18 +9,33 @@
     } @else {
       $string: "#{$selector}:nth-child(n+#{$count}):nth-last-child(-n+#{$count}),";
     }
+
     $return-value: append($return-value, $string);
     $count: $count + 1;
   }
+
   #{$return-value} {
     @content;
   }
 }
 body {
   font-family: sans-serif;
-  div {
-    margin: 30px;
 
+  div {
+    width: fit-content;
+
+    margin: 30px;
+    &::after {
+      margin-left: 30px;
+      content: url(https://res.cloudinary.com/hhdcknvdc/image/upload/c_scale,w_100/v1625174893/Screen_Shot_2021-07-01_at_5.21.42_PM_eoiopr.png);
+      width: 30px;
+      position: absolute;
+      top: 30px;
+      left: 300px;
+      height: auto;
+      margin-left: 60px;
+      margin-bottom: -70px;
+    }
     &::before {
       color: #f1a747;
       margin-top: -8px;
@@ -29,7 +44,6 @@ body {
       font-size: 2.3em;
       margin-bottom: -10px;
       margin-right: 10px;
-      line-height: -10px;
     }
   }
   ul {
@@ -37,11 +51,13 @@ body {
     clear: both;
     margin: 40px 30px;
     background-color: #f7f7f7;
-    padding: 20px;
+    padding: 20px 80px 20px 20px;
+
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
     width: fit-content;
+
     list-style: none;
     @include last-half("li", 8) {
       &::before {
@@ -52,7 +68,14 @@ body {
       }
     }
     li {
+      &:nth-of-type(2)::before {
+        opacity: 30%;
+      }
+      &:nth-of-type(4) {
+        color: limegreen;
+      }
       margin-right: 30px;
+
       &::before {
         content: "•";
         color: red;
@@ -74,5 +97,4 @@ h1 {
   padding-bottom: 10px;
   text-transform: uppercase;
   color: #808080;
-  // display: inline;
 }
