@@ -5,6 +5,7 @@ import BlogLayout from './components/blog/BlogLayout';
 import BrowseLayout from './components/BrowseLayout';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import DocsLayout from './components/docs/DocsLayout';
+import DocsLayoutSans from './components/docs/DocsLayoutSans';
 import GuestGuard from './components/GuestGuard';
 import LoadingScreen from './components/LoadingScreen';
 import MainLayout from './components/MainLayout';
@@ -332,7 +333,26 @@ const routes = [
         path: '/',
         element: (
           <Navigate
-            to="/docs/overview/welcome"
+            to="/docs/entrevue/test_01"
+            replace
+          />
+        )
+      },
+      {
+        path: '*',
+        element: <Docs />
+      }
+    ]
+  },
+  {
+    path: 'AbsolunetFrontEndTest',
+    element: <DocsLayoutSans />,
+    children: [
+      {
+        path: '/',
+        element: (
+          <Navigate
+            to="/docs/entrevue/absolunetTest"
             replace
           />
         )

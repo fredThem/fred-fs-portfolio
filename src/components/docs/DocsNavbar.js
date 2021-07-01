@@ -29,15 +29,17 @@ const DocsNavbar = ({ onSidebarMobileOpen }) => (
       <RouterLink to="/">
         <Logo
           sx={{
-            height: 40,
-            width: 40,
             display: {
-              lg: 'inline',
-              xs: 'none'
-            }
+              md: 'inline',
+            // xs: 'none',
+            },
+            mt: '3px',
+            height: 40,
+            width: 'auto',
           }}
         />
       </RouterLink>
+
     </Toolbar>
   </AppBar>
 );

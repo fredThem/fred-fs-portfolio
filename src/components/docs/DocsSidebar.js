@@ -8,143 +8,127 @@ import NavSection from '../NavSection';
 
 const sections = [
   {
-    title: 'Overview',
+    title: 'Absolunet Frontend Test',
     items: [
       {
-        title: 'Welcome',
-        path: '/docs/overview/welcome'
+        title: '1 : Écrire le HTML sémantique pour le contenu texte suivant',
+        path: '/docs/entrevue/test_01'
       },
       {
-        title: 'Getting Started',
-        path: '/docs/overview/getting-started'
+        title: '2 : Écrire les styles',
+        path: '/docs/entrevue/test_02'
       },
       {
-        title: 'Dependencies',
-        path: '/docs/overview/dependencies'
+        title: '3 : Améliorer ce code SCSS',
+        path: '/docs/entrevue/test_03'
       },
       {
-        title: 'Environment Variables',
-        path: '/docs/overview/environment-variables'
+        title: '4 : Lequel est le meilleur sémantiquement et pourquoi?',
+        path: '/docs/entrevue/test_04'
       },
       {
-        title: 'Theming',
-        path: '/docs/overview/theming'
+        title: '5 : Écrire un script qui change le texte A en B',
+        path: '/docs/entrevue/test_05'
       },
       {
-        title: 'Redux',
-        path: '/docs/overview/redux'
+        title: '6 : Écrire un script qui change la couleur du texte du <p> selon le titre cliqué',
+        path: '/docs/entrevue/test_06'
       },
       {
-        title: 'Server Calls',
-        path: '/docs/overview/server-calls'
+        title: '7 : Améliorer ce code JS',
+        path: '/docs/entrevue/test_07'
       },
       {
-        title: 'Settings',
-        path: '/docs/overview/settings'
-      },
-      {
-        title: 'RTL',
-        path: '/docs/overview/rtl'
-      },
-      {
-        title: 'Internationalization',
-        path: '/docs/overview/internationalization'
-      },
-      {
-        title: 'Deployment',
-        path: '/docs/overview/deployment'
-      },
-      {
-        title: 'Migrating to Next.js',
-        path: '/docs/overview/migrating-to-nextjs'
+        title: '8 : BINGO 🐶',
+        path: '/docs/entrevue/test_08'
       }
     ]
   },
-  {
-    title: 'Routing',
-    items: [
-      {
-        title: 'Implementation',
-        path: '/docs/routing/implementation'
-      },
-      {
-        title: 'Code Splitting',
-        path: '/docs/routing/code-splitting'
-      }
-    ]
-  },
-  {
-    title: 'Authentication',
-    items: [
-      {
-        title: 'Amplify',
-        path: '/docs/authentication/amplify'
-      },
-      {
-        title: 'Auth0',
-        path: '/docs/authentication/auth0'
-      },
-      {
-        title: 'Firebase',
-        path: '/docs/authentication/firebase'
-      },
-      {
-        title: 'JWT',
-        path: '/docs/authentication/jwt'
-      }
-    ]
-  },
-  {
-    title: 'Guards',
-    items: [
-      {
-        title: 'Guest Guard',
-        path: '/docs/guards/guest-guard'
-      },
-      {
-        title: 'Auth Guard',
-        path: '/docs/guards/auth-guard'
-      },
-      {
-        title: 'Role Based Guard',
-        path: '/docs/guards/role-based-guard'
-      }
-    ]
-  },
-  {
-    title: 'Analytics',
-    items: [
-      {
-        title: 'Introduction',
-        path: '/docs/analytics/introduction'
-      },
-      {
-        title: 'Configuration',
-        path: '/docs/analytics/configuration'
-      },
-      {
-        title: 'Event Tracking',
-        path: '/docs/analytics/event-tracking'
-      }
-    ]
-  },
-  {
-    title: 'Support',
-    items: [
-      {
-        title: 'Changelog',
-        path: '/docs/support/changelog'
-      },
-      {
-        title: 'Contact',
-        path: '/docs/support/contact'
-      },
-      {
-        title: 'Further Support',
-        path: '/docs/support/further-support'
-      }
-    ]
-  }
+  // {
+  //   title: 'Routing',
+  //   items: [
+  //     {
+  //       title: 'Implementation',
+  //       path: '/docs/routing/implementation'
+  //     },
+  //     {
+  //       title: 'Code Splitting',
+  //       path: '/docs/routing/code-splitting'
+  //     }
+  //   ]
+  // },
+  // {
+  //   title: 'Authentication',
+  //   items: [
+  //     {
+  //       title: 'Amplify',
+  //       path: '/docs/authentication/amplify'
+  //     },
+  //     {
+  //       title: 'Auth0',
+  //       path: '/docs/authentication/auth0'
+  //     },
+  //     {
+  //       title: 'Firebase',
+  //       path: '/docs/authentication/firebase'
+  //     },
+  //     {
+  //       title: 'JWT',
+  //       path: '/docs/authentication/jwt'
+  //     }
+  //   ]
+  // },
+  // {
+  //   title: 'Guards',
+  //   items: [
+  //     {
+  //       title: 'Guest Guard',
+  //       path: '/docs/guards/guest-guard'
+  //     },
+  //     {
+  //       title: 'Auth Guard',
+  //       path: '/docs/guards/auth-guard'
+  //     },
+  //     {
+  //       title: 'Role Based Guard',
+  //       path: '/docs/guards/role-based-guard'
+  //     }
+  //   ]
+  // },
+  // {
+  //   title: 'Analytics',
+  //   items: [
+  //     {
+  //       title: 'Introduction',
+  //       path: '/docs/analytics/introduction'
+  //     },
+  //     {
+  //       title: 'Configuration',
+  //       path: '/docs/analytics/configuration'
+  //     },
+  //     {
+  //       title: 'Event Tracking',
+  //       path: '/docs/analytics/event-tracking'
+  //     }
+  //   ]
+  // },
+  // {
+  //   title: 'Support',
+  //   items: [
+  //     {
+  //       title: 'Changelog',
+  //       path: '/docs/support/changelog'
+  //     },
+  //     {
+  //       title: 'Contact',
+  //       path: '/docs/support/contact'
+  //     },
+  //     {
+  //       title: 'Further Support',
+  //       path: '/docs/support/further-support'
+  //     }
+  //   ]
+  // }
 ];
 
 const DocsSidebar = (props) => {
@@ -172,7 +156,7 @@ const DocsSidebar = (props) => {
           p: 2
         }}
       >
-        <RouterLink to="/">
+        <RouterLink to="#">
           <Logo />
         </RouterLink>
       </Box>
