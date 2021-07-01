@@ -1,0 +1,78 @@
+@mixin last-half($selector, $num) {
+  $count: 1;
+  $return-value: ();
+  $string: ();
+
+  @while $count <= $num {
+    @if $count == 1 {
+      $string: "#{$selector}:first-child:last-child,";
+    } @else {
+      $string: "#{$selector}:nth-child(n+#{$count}):nth-last-child(-n+#{$count}),";
+    }
+    $return-value: append($return-value, $string);
+    $count: $count + 1;
+  }
+  #{$return-value} {
+    @content;
+  }
+}
+body {
+  font-family: sans-serif;
+  div {
+    margin: 30px;
+
+    &::before {
+      color: #f1a747;
+      margin-top: -8px;
+      float: left;
+      content: "\2605"; /* Full star in UTF8 */
+      font-size: 2.3em;
+      margin-bottom: -10px;
+      margin-right: 10px;
+      line-height: -10px;
+    }
+  }
+  ul {
+    display: block;
+    clear: both;
+    margin: 40px 30px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    width: fit-content;
+    list-style: none;
+    @include last-half("li", 8) {
+      &::before {
+        content: "-";
+        color: inherit;
+        font-size: 1.1em;
+        margin-right: 0.5em;
+      }
+    }
+    li {
+      margin-right: 30px;
+      &::before {
+        content: "•";
+        color: red;
+        font-size: 1.1em;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  float: left;
+  &::first-letter {
+    color: blue;
+  }
+  clear: right;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #808080;
+  // display: inline;
+}
