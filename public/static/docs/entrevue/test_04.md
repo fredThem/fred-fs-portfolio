@@ -7,7 +7,8 @@ title: Absolunet Test
 Entrevue v2.0.2
 
 ## 4. Lequel est le meilleur sémantiquement et pourquoi ?
-[Contexte: Page de contact du site d'Absolunet]
+
+---- 
 
 ### A
 ```html
@@ -33,7 +34,7 @@ Entrevue v2.0.2
 
 
 ## Réponse : A
-
+---- 
 ### Pourquoi A ?
 
 - Le regroupement des éléments respecte le [Content Flow](https://html.spec.whatwg.org/multipage/sections.html#the-section-element)
