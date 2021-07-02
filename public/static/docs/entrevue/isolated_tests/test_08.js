@@ -1,16 +1,6 @@
----
-title: Absolunet Test
----
+// console.log("hello");
+// console.log("world");
 
-# Test Front End
-
-Entrevue v2.0.2
-
-## 8. Écrire un script qui retourne au hasard une après l’autre toutes les billes d’un jeu de bingo (B1 à B15, I16 à I30, N31 à N45, G46 à G60, O61 à O75)
-[Langage: Javascript ECMAScript 6+]
-
-
-```javascript
 const Basket = [];
 const Game = [];
 for (let i = 1; i <= 75; i++) {
@@ -52,6 +42,3 @@ for (let i = 1; i <= Basket.length; i++) {
 
 console.log(`Game: ${Game}`);
 console.log(`Game length: ${Game.length}`);
-
-
-```
