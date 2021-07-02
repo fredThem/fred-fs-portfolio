@@ -1,31 +1,35 @@
-$color_primary: #334455;
-$color_secondary: #666;
 
-.fooBar {
-    font-size: 16px;
-    padding: 32px;
+$color_primary: #334455 !default;
+$color_secondary: #666 !default;
+
+.foo-bar {
+    $font-size: 16px;
+    font-size: $font-size;
+    padding: $font-size * 2;
     border: red solid 1px;
-    &:.big {
-      font-size: 32px;
-      padding: 64px;
+    &>.big {
+      font-size: 2em;
+      padding: 2em;
   }
 }
 .hello-world {
-    width: 50%;
     color: $color_secondary;
-
-    .col1 {
-        // width: 50%;
+    display:flex;
+flex-grow:1;
+  &>*{
+    flex-grow:1;
+  }
+    .col-9 {
         background-color: $color_primary;
         z-index: 37;
         position: static;
         @media (max-width:64em) {
-          $color_secondary: #999999;
+        //   $color_secondary: ;
           width: 75%;
-          background-color: $color_secondary;
+          background-color: #999999;
       }
     }
-    .col2 {
+    .col-3 {
         color: $color_primary;
         background-color: $color_secondary;
         @media (max-width:64em) {
@@ -35,7 +39,7 @@ $color_secondary: #666;
 
 }
 .lorem-ipsum {
-    padding: 0px 2em 0px 2em;
+    padding: 0 2em;
 }
 .lorem-dolor {
     &::before {

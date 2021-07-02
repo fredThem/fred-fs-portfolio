@@ -1,0 +1,43 @@
+
+<div id="Lorem">
+  <h1>Lorem ipsum dolor sit amet</h1>
+  <aside data-colour="red">
+      <h1>Rouge</h1>
+      <p>Lorem ipsum dolor sit amet</p>
+  </aside>
+  <section data-colour="green">
+      <h1>Vert</h1>
+      <p>Lorem ipsum dolor sit amet</p>
+  </section>
+  <aside data-colour="blue">
+      <h2>Bleu</h2>
+      <p>Lorem ipsum dolor sit amet</p>
+  </aside>
+</div>
+
+<script>
+
+
+document.querySelectorAll("[data-colour]").onclick = changeColor;   
+function changeColor() {
+        document.body.style.color = "purple";
+        return false;
+    }   
+
+// const colorSetter = document.querySelectorAll("[data-colour]");
+//   // console.log(container);
+//   for (i = 0; i < container.length; i++) {
+//     // container[i].style.display = "none";
+//     var dataColour = container[0].dataset.colour
+//     container[i].children[0].addEventListener( onclick, function() {
+//       document.getElementById("demo").style.color = dataColour;
+// });
+  }
+//   headinglinks = document.getElementsByClassName("headinglinks");
+//   for (i = 0; i < headinglinks.length; i++) {
+//     headinglinks[i].className = headinglinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(cityName).style.display = "block";
+//   evt.currentTarget.className += " active";
+}
+  </script>

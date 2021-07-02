@@ -6,8 +6,11 @@ title: Absolunet Test
 
 Entrevue v2.0.2
 
-## 1. Écrire le HTML sémantique pour le contenu texte suivant
-[Contexte: Page de contact du site d'Absolunet]
+## 6. Écrire un script qui change la couleur du texte du <p> selon le titre cliqué
+
+[Contrainte: Ne pas modifier le HTML] 
+[Langage: Javascript ECMAScript 6+]
+
 
 
 ```html
