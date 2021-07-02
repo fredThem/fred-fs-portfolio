@@ -1,0 +1,44 @@
+$color_primary: #334455;
+$color_secondary: #666;
+
+.fooBar {
+    font-size: 16px;
+    padding: 32px;
+    border: red solid 1px;
+    &:.big {
+      font-size: 32px;
+      padding: 64px;
+  }
+}
+.hello-world {
+    width: 50%;
+    color: $color_secondary;
+
+    .col1 {
+        // width: 50%;
+        background-color: $color_primary;
+        z-index: 37;
+        position: static;
+        @media (max-width:64em) {
+          $color_secondary: #999999;
+          width: 75%;
+          background-color: $color_secondary;
+      }
+    }
+    .col2 {
+        color: $color_primary;
+        background-color: $color_secondary;
+        @media (max-width:64em) {
+            width: 25%;
+        }
+    }
+
+}
+.lorem-ipsum {
+    padding: 0px 2em 0px 2em;
+}
+.lorem-dolor {
+    &::before {
+        color: lighten($color_secondary, 20%);
+    }
+}

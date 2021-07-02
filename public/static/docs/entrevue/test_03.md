@@ -6,130 +6,85 @@ title: Absolunet Test
 
 Entrevue v2.0.2
 
-## 3. Améliorer ce code SCSS 
+## 3. Améliorer ce code SCSS
+
 (tout peut être changé)
 
 
+### ✍️ [Codepen view](https://codepen.io/them-sayer/pen/jOmPaQe)
+
+
+```scss
+$color_primary: #334455 !default;
+$color_secondary: #666 !default;
+
+.foo-bar {
+  $font-size: 16px;
+  font-size: $font-size;
+  padding: $font-size * 2;
+  border: red solid 1px;
+  & > .big {
+    font-size: 2em;
+    padding: 2em;
+  }
+}
+.hello-world {
+  color: $color_secondary;
+  display: flex;
+  flex-grow: 1;
+  & > * {
+    flex-grow: 1;
+    box-sizing: border-box;
+  }
+  .col-9 {
+    background-color: $color_primary;
+    z-index: 37;
+    @media (max-width: 64em) {
+      width: 75%;
+      background-color: #999999;
+    }
+  }
+  .col-3 {
+    color: $color_primary;
+    background-color: $color_secondary;
+    @media (max-width: 64em) {
+      width: 25%;
+    }
+  }
+}
+.lorem-ipsum {
+  padding: 0 2em;
+}
+.lorem-dolor {
+  &::after {
+    color: lighten($color_secondary, 20%);
+    //     below is for clarity
+    content: "Eeny, meeny, miny, moe.";
+    background-color: $color_primary;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
+```
+
+
+
 ```html
-<!DOCTYPE html>
-<html lang="fr">
+<div class="hello-world">
+    <div class="col-9">
+        <p class="foo-bar">eenie meenie miney <span class="big">mo</span></p>
+    </div>
+    <div class="col-3"> 
+        <p class="foo-bar">Catch a 🐯 by the <span class="big">toe</span></p>
+    </div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible"
-        content="IE=edge" />
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
-  <title>Sémantique HTML</title>
-</head>
-
-<body>
-  <main>
-    <!-- 📖 address collection structure as per https://html.spec.whatwg.org/multipage/sections.html#the-address-element
-      see => If node is an article element 👀 -->
-    <article itemscope
-             itemtype="http://schema.org/ContactPoint">
-      <h1 itemscope
-          itemtype="http://schema.org/Organization"
-          itemprop="legalName">
-        Absolunet
-      </h1>
-      <dl>
-        <dt>Télécopieur :</dt>
-        <dd itemprop="faxNumber">
-          1 888 563-3057
-        </dd>
-
-        <dt>Sans frais :</dt>
-        <dd itemtype="http://schema.org/ContactPointOption">
-          <!-- 📓 https://schema.org/TollFree -->
-          <a href="tel:+18779792276"
-             itemprop="TollFree">1 877 979-2276</a>
-        </dd>
-
-        <dt>Courriel :</dt>
-        <dd>
-          <a href="mailto:info@absolunet.com"
-             itemprop="email">info@absolunet.com</a>
-        </dd>
-      </dl>
-    </article>
-
-    <article itemscope
-             itemtype="http://schema.org/ContactPoint, http://schema.org/Organization">
-      <h1 itemprop="branch">Montréal</h1>
-
-      <address itemscope
-               itemtype="schema.org/PostalAddress">
-        <a href="https://goo.gl/maps/STvxR1nngTnYPnJd6"
-           target="_blank">
-          <span itemprop="streetAddress">4398 <abbr title="boulevard">Boul.</abbr> <abbr
-                  title="Saint-Laurent">St-Laurent</abbr></span>
-          </br>
-          <span itemprop="addressLocality"><abbr title="Sainte-Thérèse">Montréal</abbr></span>,
-          <span itemprop="addressRegion">Québec</span>
-          <span itemprop="postalCode">H2W 1Z5</span>
-        </a>
-      </address>
-
-      <dl>
-        <dt>Téléphone :</dt>
-        <dd>
-          <a href="tel:+15149826560">1 514 982-6560</a>
-        </dd>
-      </dl>
-    </article>
-
-    <article itemscope
-             itemtype="http://schema.org/ContactPoint">
-      <h1 itemtype="http://schema.org/Organization"
-          itemprop="branch">Ste-Thérèse</h1>
-
-      <p itemprop="headOffice">Siège social</p> <!-- non-official prop -->
-
-      <address itemscope
-               itemtype="schema.org/PostalAddress">
-        <a href="https://goo.gl/maps/F3GPYbGovjpG8vCWA"
-           target="_blank">
-          <span itemprop="streetAddress">260 rue Sicard, bureau 300</span>
-          </br>
-          <span itemprop="addressLocality">
-            <abbr title="Sainte-Thérèse">Ste-Thérèse</abbr>
-          </span>,
-          <span itemprop="addressRegion">Québec</span>
-          <span itemprop="postalCode">J7E 3X4</span>
-        </a>
-      </address>
-      <dl>
-        <dt>Téléphone :</dt>
-        <dd>
-          <a href="tel:+14509797620">450 979-7620</a>
-        </dd>
-      </dl>
-    </article>
-
-    <article itemscope
-             itemtype="http://schema.org/ContactPoint">
-      <h1 itemtype="https://schema.org/Service"
-          itemprop="provider">Hébergement par <span>Amazon Web Services</span> (<abbr
-              title="Amazon Web Services">AWS</abbr>)</h1>
-      <address itemscope
-               itemtype="schema.org/PostalAddress">
-        <a href="https://goo.gl/maps/F3GPYbGovjpG8vCWA"
-           target="_blank">
-          <span itemprop="streetAddress">410 Terry Ave. North</span>
-          </br>
-          <span itemprop="addressLocality">
-            Seattle
-          </span>,
-          <span itemprop="addressRegion"><abbr title="Washington">WA</abbr></span>
-          <span itemprop="postalCode">98109-5210</span>
-        </a>
-      </address>
-    </article>
-  </main>
-</body>
-
-</html>
+    </div>    
+</div>
+<div class="hello-world" style="text-align:center;">
+        <h1 class="lorem-dolor">If he hollers, let him go,
+</h1>
+</div>
 
 ```
