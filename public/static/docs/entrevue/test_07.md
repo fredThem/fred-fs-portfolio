@@ -53,7 +53,7 @@ const y = abc.y;
 console.log(x == 1 && y >= 2 ? 'yeah' : 'boo');
 ```
 
-### after 
+### After 
 ```javascript
 function helloWorld(foo) {
   console.log(`input is: ${foo}`);

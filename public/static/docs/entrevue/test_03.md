@@ -32,6 +32,7 @@ $color_secondary: #666 !default;
     & > * {
         flex-grow: 1;
         box-sizing: border-box;
+        width: 50%; 
     }
     .col-9 {
         background-color: $color_primary;
