@@ -2,7 +2,7 @@
 title: Absolunet Test
 ---
 
-# Test Front End
+# Test Front End [#](https://docs.google.com/document/d/1mURG0b29iJtbO4kfVlAEnshyOFawCPOZqvI9ODrwPwU/)
 
 Entrevue v2.0.2
 
@@ -13,9 +13,8 @@ Entrevue v2.0.2
 ```javascript
 const Basket = []; // define the basket (before bingo starts)
 const Game = []; // define the resulting game
-//
+
 for (let ballNumber = 1; ballNumber <= 75; ballNumber++) {
-  //
   if (ballNumber <= 15) {
     Basket.push(`B${ballNumber}`);
   } else if (ballNumber <= 30) {
@@ -44,13 +43,10 @@ function shuffle(array) {
 }
 console.log(`Basket: ${Basket}`);
 shuffle(Basket);
-// debugger;
 for (let i = 1; i <= Basket.length; i++) {
-  // debugger;
-  // console.log(Basket[i]);
   Game.push(Basket[i]);
 }
-console.log(`Game: ${Game}`);
-console.log(`Game length: ${Game.length}`);
+console.log(`Game: ${Game}, do we have a bingo ?`);
+// console.log(`Game length: ${Game.length} balls`); // 75
 
 ```
