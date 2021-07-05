@@ -1,48 +1,51 @@
-
-$color_primary: #334455 !default;
+$color_primary: #345 !default;
 $color_secondary: #666 !default;
-
 .foo-bar {
     $font-size: 16px;
     font-size: $font-size;
     padding: $font-size * 2;
     border: red solid 1px;
-    &>.big {
-      font-size: 2em;
-      padding: 2em;
-  }
+    & > .big {
+        font-size: 2em;
+        padding: 2em;
+    }
 }
 .hello-world {
     color: $color_secondary;
-    display:flex;
-flex-grow:1;
-  &>*{
-    flex-grow:1;
-  }
+    display: flex;
+    flex-grow: 1;
+    & > * {
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
     .col-9 {
         background-color: $color_primary;
         z-index: 37;
-        position: static;
-        @media (max-width:64em) {
-        //   $color_secondary: ;
-          width: 75%;
-          background-color: #999999;
-      }
+        @media (max-width: 64em) {
+            width: 75%;
+            background-color: #999;
+        }
     }
     .col-3 {
         color: $color_primary;
         background-color: $color_secondary;
-        @media (max-width:64em) {
+        @media (max-width: 64em) {
             width: 25%;
         }
     }
-
 }
 .lorem-ipsum {
     padding: 0 2em;
 }
 .lorem-dolor {
-    &::before {
+    &::after {
         color: lighten($color_secondary, 20%);
+        //     below is for clarity
+        content: "Eeny, meeny, miny, moe.";
+        background-color: $color_primary;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-left: 10px;
     }
 }

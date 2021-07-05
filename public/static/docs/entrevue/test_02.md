@@ -7,11 +7,12 @@ title: 2. Écrire les styles
 Entrevue v2.0.2
 
 ## 2. Écrire les styles
+
       ### Contraintes
       - Ne pas modifier le HTML
-      - Langage: SCSS 
+      - Langage: SCSS
 
-### ✍️ [Codepen view](https://codepen.io/them-sayer/pen/jOmPaQe)  
+### ✍️ [Codepen view](https://codepen.io/them-sayer/pen/jOmPaQe)
 
 ```html
 <!DOCTYPE html>
@@ -59,7 +60,6 @@ Entrevue v2.0.2
     @content;
   }
 }
-
 body {
   font-family: sans-serif;
   div {
@@ -70,7 +70,6 @@ body {
       height: auto;
       left: 300px;
       margin-bottom: -70px;
-      margin-left: 30px;
       margin-left: 60px;
       position: absolute;
       top: 30px;
@@ -97,6 +96,7 @@ body {
     margin: 40px 30px;
     padding: 20px 80px 20px 20px;
     width: fit-content;
+
     @include last-half("li", 8) {
       &::before {
         content: "-";
