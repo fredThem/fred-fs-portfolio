@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Fred&apos;s Full-Stack Porfolio</title>
+        <title>Fred&apos;s Full-Stack Portfolio</title>
       </Helmet>
       <div>
         <HomeHero />
