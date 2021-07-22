@@ -9,15 +9,13 @@ import gtm from '../lib/gtm';
 const ServerError = () => {
   const theme = useTheme();
   const mobileDevice = useMediaQuery(theme.breakpoints.down('sm'));
-
   useEffect(() => {
     gtm.push({ event: 'page_view' });
   }, []);
-
   return (
     <>
       <Helmet>
-        <title>Error: Server Error | Material Kit Pro</title>
+        <title>Error: Server Error | Fred&apos;s portfolio</title>
       </Helmet>
       <Box
         sx={{
@@ -86,5 +84,4 @@ const ServerError = () => {
     </>
   );
 };
-
 export default ServerError;
