@@ -18,6 +18,7 @@ import Brightness4Icon from '@material-ui/icons/Brightness4';
 import DonutSmallIcon from '@material-ui/icons/DonutSmall';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import CategoryIcon from '@material-ui/icons/Category';
+
 // import EqualizerIcon from '@material-ui/icons/Equalizer';
 import { useState, useEffect } from 'react';
 import { Box, Container, Grid, Typography, LinearProgress } from '@material-ui/core';
@@ -89,7 +90,7 @@ const HomeSkillTree = () => {
     },
     {
       name: 'Mailing',
-      technologies: '[Acoustic automated campaign]',
+      technologies: '[Acoustic automated campaign, External content retrieval, Dynamic rules, Task running : Grunt(scss inlining, content build, image hosting)]',
       startYear: 2021 - 3,
     },
     {
@@ -99,77 +100,87 @@ const HomeSkillTree = () => {
     },
     {
       name: 'Framework',
-      technologies: '[React.js, Redux, Ruby on Rails]',
-      startYear: 2021 - 1,
+      technologies: '[React.js, Ruby on Rails]',
+      startYear: 2021 - 2,
     },
     {
       name: 'Modern CSS',
       technologies: '[CSS Modules, Styled Components, Emotion]',
-      startYear: 2021 - 1,
+      startYear: 2021 - 2,
     },
     {
       name: 'Build Tools',
-      technologies: '[npm scripts, Linters and Formatters(Prettier, Eslint)]',
-      startYear: 2021 - 1,
+      technologies: '[npm scripts, Linters and Formatters(Prettier, Eslint), Task Runners(Grunt), Module Bundlers(Webpack)]',
+      startYear: 2021 - 2,
     },
     {
       name: 'Test Driven Developement',
-      technologies: '[Jest, Storybookjs]',
-      startYear: 2021 - 1,
-    },
-    {
-      name: 'Static Site Generators',
-      technologies: '[Create React App, GatsbyJS]',
-      startYear: 2021 - 0,
+      technologies: '[Jest, react-testing-library, Storybook.js, Mocha]',
+      startYear: 2021 - 2,
     },
     {
       name: 'Type Checkers',
       technologies: '[Flow, TypeScript]',
-      startYear: 2021,
+      startYear: 2021 - 1,
     },
     {
       name: 'GraphQL',
       technologies: '[Apollo]',
-      startYear: 2021,
+      startYear: 2021 - 1,
     },
-
+    {
+      name: 'SSG',
+      technologies: '[Create React App, GatsbyJS]',
+      startYear: 2021 - 1,
+    },
     // {GraphQL [Apollo]}
   ];
+
   const BackEndReferrals = [
     {
       name: 'Internet',
-      technologies: '[DNS, Hosting, Web Security]',
-      startYear: 2020,
+      technologies: '[DNS, Hosting, Web Security, HTTPS, Content Security Policy]',
+      startYear: 2021 - 2,
     },
     {
       name: 'Languages',
       technologies: '[Ruby, JavaScript]',
-      startYear: 2020,
+      startYear: 2021 - 2,
     },
     {
       name: 'Terminal',
       technologies: '[zsh, brew]',
-      startYear: 2020,
+      startYear: 2021 - 2,
     },
     {
-      name: 'Framework',
-      technologies: '[Ruby on Rails, Firebase]',
-      startYear: 2020,
+      name: 'Hosting and storage',
+      technologies: '[Heroku, Firebase, AWS]',
+      startYear: 2021 - 2,
+    },
+    {
+      name: 'Web app frameworks',
+      technologies: '[Node.js(Express), Ruby on Rails]',
+      startYear: 2021 - 2,
     },
     {
       name: 'Relational Databases',
       technologies: '[PostgreSQL]',
-      startYear: 2020,
+      startYear: 2021 - 2,
     },
     {
-      name: 'Object Relational Mapping',
-      technologies: '[Active Record]',
-      startYear: 2020,
+      name: 'NoSQL Databases',
+      technologies: '[MongoDB]',
+      startYear: 2021 - 1,
+    },
+    {
+      name: 'Object–relational mapping',
+      technologies: '',
+      startYear: 2021 - 2,
     },
     {
       name: 'MVC design patterns',
       technologies: '',
-      startYear: 2020,
+      startYear: 2021 - 2,
     },
     {
       name: 'CI / CD',
@@ -177,11 +188,11 @@ const HomeSkillTree = () => {
         '[Storybook (Chromatic PR), Heroku pipeline, Gitflow, Git-Slack, GitLens, GitKraken, CodeStream]',
       startYear: 2020,
     },
-    {
-      name: 'Caching',
-      technologies: '[CDN]',
-      startYear: 2020,
-    },
+    // {
+    //   name: 'Caching',
+    //   technologies: '[CDN]',
+    //   startYear: 2020,
+    // },
     {
       name: 'Search Engines',
       technologies: '[Elasticsearch]',
@@ -337,12 +348,6 @@ const HomeSkillTree = () => {
                   <DonutSmallIcon />,
                   <Brightness4Icon />,
                 ]}
-                // currency="$"
-                // description="To familiarize yourself with our tools."
-                // features={['Create contracts', 'Chat support', 'Email alerts']}
-                // image="/static/pricing/plan1.svg"
-                // name="&#x3C;FrontEnd/&#x3E;"
-                // price="0"
                 sx={{
                   height: '100%',
                   maxWidth: 460,
@@ -360,7 +365,6 @@ const HomeSkillTree = () => {
               <SkillBranch
                 title={skillsApi.BackEnd.title}
                 pictograms={[
-                  // <SecurityIcon />,
                   <StorageIcon />,
                   <MemoryIcon />,
                   <ForumIcon />,
@@ -370,12 +374,6 @@ const HomeSkillTree = () => {
                   <GroupAddIcon />
 
                 ]}
-                // currency="$"
-                // description="To familiarize yourself with our tools."
-                // features={['Create contracts', 'Chat support', 'Email alerts']}
-                // image="/static/pricing/plan1.svg"
-                // name="&#x3C;FrontEnd/&#x3E;"
-                // price="0"
                 sx={{
                   height: '100%',
                   maxWidth: 460,
@@ -397,14 +395,7 @@ const HomeSkillTree = () => {
                   <FormatShapesIcon />,
                   <MovieFilterIcon />,
                   <ExtensionIcon />,
-                  // <Brightness4Icon />,
                 ]}
-                // currency="$"
-                // description="To familiarize yourself with our tools."
-                // features={['Create contracts', 'Chat support', 'Email alerts']}
-                // image="/static/pricing/plan1.svg"
-                // name="&#x3C;FrontEnd/&#x3E;"
-                // price="0"
                 sx={{
                   height: '100%',
                   maxWidth: 460,
@@ -415,14 +406,6 @@ const HomeSkillTree = () => {
             </Grid>
           </Grid>
         </Container>
-        {/* <Typography
-          align="center"
-          color="textSecondary"
-          component="p"
-          variant="caption"
-        >
-          30% of our income goes into Whale Charity
-        </Typography> */}
       </Box>
     </>
   );
